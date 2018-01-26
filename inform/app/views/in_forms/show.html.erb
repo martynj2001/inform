@@ -1,0 +1,7 @@
+<h2>InForm submitted at: <%= @in_forms.created_at %></h2>
+
+<h4>Submitted by: <%= @in_forms.num %> <%= @in_forms.rank %> <%= @in_forms.name %> </h4>
+<h4>Sub-Unit: <%= @in_forms.pl %></h4>
+<p>InForm Description: <%= @in_forms.body %></p>
+
+<%= link_to "Back to List", in_forms_path, class: "btn"%>

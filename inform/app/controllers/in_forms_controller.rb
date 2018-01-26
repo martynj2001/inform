@@ -4,5 +4,9 @@ class InFormsController < ApplicationController
     @in_forms = InForm.all
   end
 
+  def show
+    @in_forms = InForm.find(params[:id])
+  end
+
 
 end

@@ -1,3 +1,53 @@
 // Place all the styles related to the in_forms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-color: #f0f0f5;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  background-color: #f0f0f5;
+}
+h1 {
+  font-size: 52px;
+  color: #ffff
+}
+h2, b, ol {
+  color: #660066;
+}
+
+.submit {
+  background-color: #660066;
+  padding: 20px;
+  height: auto;
+}
+.row {
+  padding: 10px 0px;
+}
+
+#intro_text {
+  background-color: #ccccff;
+  padding: 5px 10px;
+}
+
+#title {
+  margin: 20px auto;
+  text-align: center;
+}
+#sub {
+  width: 50%;
+  margin: 0 auto;
+}
+#s_btn {
+  width: 100%;
+}
+
+#txt_area {
+  width: 100%;
+}
