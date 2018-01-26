@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3AAC In-form</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+<h1> 3AAC InForm Web App </h1>
+
+<%= link_to "Submit InForm", new_in_form_path, class: 'btn-default' %>
+
+<h2> All Current In-Forms (by date)</h1>
+<ul id="in_forms">
+  <% @in_forms.each do |in_form| %>
+    <li><%= link_to in_form.created_at, in_form_path(in_form)%></li>
+  <% end %>
+</ul>
