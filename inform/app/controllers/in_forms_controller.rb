@@ -1,0 +1,2 @@
+class InFormsController < ApplicationController
+end

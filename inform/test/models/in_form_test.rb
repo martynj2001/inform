@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SubmittedTest < ActiveSupport::TestCase
+class InFormTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

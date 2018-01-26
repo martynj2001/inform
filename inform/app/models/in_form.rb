@@ -1,0 +1,2 @@
+class InForm < ApplicationRecord
+end

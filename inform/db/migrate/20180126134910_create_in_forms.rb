@@ -1,13 +1,12 @@
-class CreateSubmitteds < ActiveRecord::Migration[5.0]
+class CreateInForms < ActiveRecord::Migration[5.0]
   def change
-    create_table :submitteds do |t|
-
-      t.string :rank
+    create_table :in_forms do |t|
       t.string :name
+      t.string :rank
+      t.string :num
       t.string :pl
       t.string :email
       t.text :body
-
       t.timestamps
     end
   end
