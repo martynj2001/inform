@@ -1,24 +1,15 @@
-# README
+# inform
+3AAC inform project.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Basic html & css page, looks generally like JHC inform - Complete
+2. Rails app to fill out and send informs to Wksp 2IC and FS Officer - Ongoing
 
-Things you may want to cover:
+2a. Rails app stores informs.
+2b. FS Officer can review informs - requires login account.
 
-* Ruby version
+3. FSO can respond, user can create account and see responses.
+4. User email updates on submitted informs.
 
-* System dependencies
+Rails App - Change log/ToDo.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+28 Jan 18: Basic rails app allows anyone to submit to create new inform, edit and delete informs. Header partial looks and feels like inform. Everything else very messy. Need to complete CSS styling to make site look professional. Add menu across the top and use bootstrap to style forms. Need to add authentication (look into rails site security - probably se sorcery as its simple.). Only an authenticated user can view currently submitted informs, edit and delete. Need to created a second rails model 'Respond' to allow FSO to respond to InForm. This will require two types of user 1. Admin: that can see all submitted InForms and respond. 2. User: can submit Informs and see responses.
