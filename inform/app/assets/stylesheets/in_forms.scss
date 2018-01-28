@@ -9,10 +9,7 @@ body {
   font-size: 18px;
   font-weight: 200;
   background-color: #f0f0f5;
-}
-h1 {
-  font-size: 52px;
-  color: #ffff
+  padding: 10px;
 }
 h2, b, ol {
   color: #660066;
@@ -27,6 +24,7 @@ h2, b, ol {
   padding: 10px 0px;
 }
 
+
 #intro_text {
   background-color: #ccccff;
   padding: 5px 10px;
@@ -35,6 +33,8 @@ h2, b, ol {
 #title {
   margin: 20px auto;
   text-align: center;
+  font-size: 52px;
+  color: #ffff;
 }
 #sub {
   width: 50%;

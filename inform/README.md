@@ -9,6 +9,7 @@
 
 3. FSO can respond, user can create account and see responses.
 4. User email updates on submitted informs.
+5. User can upload supporting documents and photos. (Gem: paperclip)
 
 Rails App - Change log/ToDo.
 

@@ -1,26 +1,51 @@
 <%= form_for(@in_forms) do |f| %>
-<ul>
-  <% @in_forms.errors.full_messages.each do |error| %>
-  <li><%= error %> </li>
-  <% end %>
-</ul>
-<p>
-  <%= f.label :num %>
-  <%= f.text_field :num %>
-  <%= f.label :rank %>
-  <%= f.text_field :rank %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.label :email %>
-  <%= f.text_field :email%>
-</p>
-<p>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
+  <ul>
+    <% @in_forms.errors.full_messages.each do |error| %>
+    <li><%= error %> </li>
+    <% end %>
+  </ul>
+
+  <div class = 'row'>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <p>
+        <%= f.label :number,style: 'padding-right:10px;' %>
+        <%= f.text_field :num, style: 'width:65%;'%>
+      </p>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <p>
+      <%= f.label :rank, style: 'padding-right:10px;' %>
+      <%= f.text_field :rank, style: 'width:75%;' %>
+      </p>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <p>
+        <%= f.label :name, style: 'padding-right:10px;' %>
+        <%= f.text_field :name, style: 'width:75%;' %>
+      </p>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+    <div class="col-sm-10 col-md-10 col-lg-10">
+        <p>
+          <%= f.label :email, style: 'padding-right:10px;' %>
+          <%= f.text_field :email, style: 'width:75%;'%>
+        </p>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+  </div>
+  <div class='row'>
+    <p>
+      <%= f.label :description %>
+      <%= f.text_area :body, :rows => 10, style: 'width:100%;' %>
+    </p>
+  </div>
+  <div class = 'row'>
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+
 <% end %>
