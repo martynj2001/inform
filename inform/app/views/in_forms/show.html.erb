@@ -1,7 +1,11 @@
+<%= render partial: 'header' %>
+
 <h2>InForm submitted at: <%= @in_forms.created_at %></h2>
 
 <h4>Submitted by: <%= @in_forms.num %> <%= @in_forms.rank %> <%= @in_forms.name %> </h4>
 <h4>Sub-Unit: <%= @in_forms.pl %></h4>
 <p>InForm Description: <%= @in_forms.body %></p>
 
-<%= link_to "Back to List", in_forms_path, class: "btn"%>
+<%= link_to "Back to List", in_forms_path, class: "btn-default"%>
+<%= link_to "Edit InForm", edit_in_form_path(@in_forms), class: "btn-default" %>
+<%= link_to "Delete InForm", in_form_path(@in_forms), method: :delete, class: "btn-default", data: {confirm: "Are you sure you want to delete this Inform?"} %>

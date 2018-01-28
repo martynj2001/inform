@@ -1,0 +1,26 @@
+<%= form_for(@in_forms) do |f| %>
+<ul>
+  <% @in_forms.errors.full_messages.each do |error| %>
+  <li><%= error %> </li>
+  <% end %>
+</ul>
+<p>
+  <%= f.label :num %>
+  <%= f.text_field :num %>
+  <%= f.label :rank %>
+  <%= f.text_field :rank %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :email %>
+  <%= f.text_field :email%>
+</p>
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
