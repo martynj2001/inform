@@ -3,14 +3,16 @@
   <head>
     <title>3AAC InForm</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render 'in_forms/navbar'%>
     <div class = container>
-      <p class='flash'><%=flash.notice%></p>
+      <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+      <% end -%>
       <%= yield %>
     </div>
   </body>

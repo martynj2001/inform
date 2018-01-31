@@ -1,2 +1,3 @@
 class InForm < ApplicationRecord
+  has_many :responses
 end

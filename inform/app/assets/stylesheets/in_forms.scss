@@ -11,19 +11,25 @@ body {
   background-color: #f0f0f5;
   padding: 10px;
 }
-h2, b, ol {
+h2, b, ol, .nav_text{
   color: #660066;
+}
+
+.nav_text{
+  color: #660066;
+  font-size: 18px;
 }
 
 .submit {
   background-color: #660066;
-  padding: 20px;
+  padding: 10px;
   height: auto;
 }
-.row {
-  padding: 10px 0px;
+.subtitle{
+  color: #660066;
+  font-weight: bold;
+  font-size: 20px;
 }
-
 
 #intro_text {
   background-color: #ccccff;
@@ -39,11 +45,4 @@ h2, b, ol {
 #sub {
   width: 50%;
   margin: 0 auto;
-}
-#s_btn {
-  width: 100%;
-}
-
-#txt_area {
-  width: 100%;
 }
