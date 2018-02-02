@@ -1,3 +1,3 @@
 class InForm < ApplicationRecord
-  has_many :responses
+  has_many :comments
 end

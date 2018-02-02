@@ -2,11 +2,18 @@
 
 <h2 class="subtitle">InForm submitted at: <%= @in_forms.created_at %></h2>
 
-<h4 class="subtitle">Submitted by: <%= @in_forms.num %> <%= @in_forms.rank %> <%= @in_forms.name %></h4>
+<h4 class="subtitle">Submitted by: <span class='output_text'><%= @in_forms.num %> <%= @in_forms.rank %> <%= @in_forms.name %></span></h4>
 
-<h4 class="subtitle">Sub-Unit: <%= @in_forms.pl %></h4>
+<h4 class="subtitle">Sub-Unit: <span class='output_text'><%= @in_forms.pl %></span></h4>
+
+<hr></hr>
 
 <h4 class="subtitle">InForm Description:</h4><p><%= @in_forms.body %></p>
+
+<hr></hr>
+
+<h4 class='subtitle'>Response/Update:</h4>
+<%= render partial: 'in_forms/comment', collection: @in_forms.comments %>
 
 <div class="row">
   <div class="col-xs-2"><%= link_to "Back to List", in_forms_path, class: " btn btn-default nav_text"%></div>
