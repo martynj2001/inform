@@ -1,5 +1,5 @@
 <div>
-  <p class='subtitle'>Response by: <span class="output_text"><%=comment.author_name %></span> at
-    <span class="output_text"><%=comment.created_at %></span></p>
+  <p class='subtitle'>Response by: <span class="output_text"><%=comment.author_name %></span>,
+    <span class="output_text"><%= distance_of_time_in_words(comment.in_form.created_at, comment.created_at) %> ago.</span></p>
   <p> <%=comment.body %></p>
 </div>

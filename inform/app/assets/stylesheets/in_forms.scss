@@ -19,6 +19,11 @@ h2, b, ol, .nav_text{
   color: #660066;
   font-size: 18px;
 }
+.nav_text_btn{
+  color: #660066;
+  font-size: 18px;
+  height: auto;
+}
 .btn_text{
   color: #660066;
   font-size: 18px;
@@ -56,4 +61,7 @@ h2, b, ol, .nav_text{
 }
 #comments_form{
   margin: 5px;
+}
+#inform_nav_title {
+ font-size: 30px;
 }
