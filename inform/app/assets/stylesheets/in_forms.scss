@@ -19,7 +19,14 @@ h2, b, ol, .nav_text{
   color: #660066;
   font-size: 18px;
 }
-
+.btn_text{
+  color: #660066;
+  font-size: 18px;
+  width: 100%;
+}
+.footer{
+  padding: 5px;
+}
 .submit {
   background-color: #660066;
   padding: 10px;
@@ -46,4 +53,7 @@ h2, b, ol, .nav_text{
 #sub {
   width: 50%;
   margin: 0 auto;
+}
+#comments_form{
+  margin: 5px;
 }

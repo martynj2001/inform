@@ -8,6 +8,8 @@ class InFormsController < ApplicationController
 
   def show
     @in_forms = InForm.find(params[:id])
+    @comment = Comment.new
+    @comment.in_form_id = @in_forms.id
   end
 
   def new
