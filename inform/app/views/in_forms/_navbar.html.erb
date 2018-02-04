@@ -7,7 +7,15 @@
       <li class="active"><%= link_to "Submit InForm", new_in_form_path, class: 'btn btn-success btn-lg nav_text'%></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to " Tech-Login", new_in_form_path, class: 'nav-link nav_text glyphicon glyphicon-user'%></li>
+      <li>
+        <% if logged_in? %>
+          <p class='nav_text glyphicon glyphicon-user'><%=current_user.username%></p>
+          <%= link_to " Sign-Out", logout_path, class: 'nav-link nav_text glyphicon glyphicon-log-out'%>
+        <%else%>
+          <%= link_to " Sign-In", login_path, class: 'nav-link nav_text glyphicon glyphicon-log-in'%>
+        <% end %>
+      </li>
+      <li></li>
       <li><%= link_to " LEMSCO-Login", new_in_form_path, class: 'nav-link nav_text glyphicon glyphicon-log-in'%></li>
     </ul>
   </div>

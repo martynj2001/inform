@@ -9,6 +9,7 @@
 
   <body>
     <%= render 'in_forms/navbar'%>
+    <%= render 'in_forms/header'%>
     <div class = container>
       <% flash.each do |name, msg| -%>
             <%= content_tag :div, msg, class: "alert alert-#{name}" %>
