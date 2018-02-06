@@ -9,7 +9,11 @@
     <div class='row'>
       <p class='col-xs-4'>
         <%= f.label :number %>
-        <%= f.text_field :num, class: 'form-control', placeholder: 'Regt Number'%>
+        <% if logged_in? %>
+            <%= f.text_field :num, class: 'form-control', placeholder: "#{current_user.username}'s number'"%>
+        <% else %>
+            <%= f.text_field :num, class: 'form-control', placeholder: 'Regt Number'%>
+        <% end %>
       </p>
       <p class='col-xs-4'>
         <%= f.label :rank %>
@@ -24,7 +28,11 @@
 
   <div class='form-group'>
     <%= f.label :email%>
-    <%= f.text_field :email, type: 'email', class: 'form-control', placeholder: 'name@email.com', style: 'width:75%;'%>
+    <% if logged_in? %>
+      <%= f.text_field :email, type: 'email', class: 'form-control', value: current_user.email, style: 'width:75%;'%>
+    <% else %>
+      <%= f.text_field :email, type: 'email', class: 'form-control', placeholder: 'name@email.com', style: 'width:75%;'%>
+    <% end %>
   </div>
   <div class='form-group'>
 
