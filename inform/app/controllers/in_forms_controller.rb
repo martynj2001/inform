@@ -19,7 +19,8 @@ class InFormsController < ApplicationController
   def create
     @in_forms = InForm.new(in_form_params)
     @in_forms.save
-
+    SendInformMailer.send_inform(@user, @in_forms)
+    #flash.notice = "#{@in_forms.rank} #{@in_forms.name} your InForm has been emailed to the Wksp FSO"
     flash.notice = "#{@in_forms.rank} #{@in_forms.name} your InForm has been submited to the Wksp FSO"
 
     redirect_to in_forms_path(@in_forms)

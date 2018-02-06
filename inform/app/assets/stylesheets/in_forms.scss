@@ -15,14 +15,15 @@ h2, b, ol, .nav_text{
   color: #660066;
 }
 
-.nav_text{
+.nav_text, .nav_text_btn, nav_text_user{
   color: #660066;
   font-size: 18px;
 }
 .nav_text_btn{
-  color: #660066;
-  font-size: 18px;
   height: auto;
+}
+.nav_text_user{
+  margin: 0 auto;
 }
 .btn_text{
   color: #660066;
@@ -43,6 +44,9 @@ h2, b, ol, .nav_text{
 }
 .output_text{
   color: black;
+}
+.center_text{
+  text-align: center;
 }
 #intro_text {
   background-color: #ccccff;

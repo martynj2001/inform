@@ -1,16 +1,20 @@
-<!-- Use for_for in order to pick up bootstrap styles -->
 
-<%= form_tag user_sessions_path, method: :post do %>
-
-  <div class="form-group">
-    <%= label_tag :email%>
-    <span class='form-control'><%= text_field_tag :email %></span>
-  </div>
-  <div class="form-group">
-    <%= label_tag :password %>
-    <%= password_field_tag :password, class => 'form-control'%>
-  </div>
-  <div class='form-group'>
-    <%= submit_tag "Login", class:'btn btn-default' %>
-  </div>
-  <% end %>
+<%= form_tag user_sessions_path, :class => 'form-horizontal center', method: :post  do %>
+<div class='row'>
+  <div class='col-xs-12 col-md-4'></div>
+  <div class='col-xs-12 col-md-4'>
+    <h2 class='subtitle center_text'>Please Login</h2>
+    <div class="form-group">
+      <%= label_tag :email%>
+      <%= text_field_tag :email, "", class: 'form-control', placeholder: 'myemail@email.com' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, "", class: 'form-control', placeholder: 'password' %>
+    </div>
+    <div class='form-group'>
+      <%= submit_tag "Login", class:'btn btn-default', style: 'width:100%;' %>
+    </div>
+  <div>
+  <div class='col-xs-12 col-md-4'></div>
+<% end %>

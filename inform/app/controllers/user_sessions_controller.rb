@@ -1,14 +1,15 @@
 class UserSessionsController < ApplicationController
 
   def new
-
+    @user_login = User.new
   end
 
   def create
-    if login(params[:email], params[:password])
+    if @user_login = login(params[:email], params[:password])
       redirect_back_or_to(in_forms_path, notice: 'Logged in successfully.')
     else
-      flash.now.alert = "Login failed."
+      @user_login = User.new
+      flash[alert] = "Login failed."
       render action: :new
     end
   end

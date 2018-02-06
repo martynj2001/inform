@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" >
+  </head>
+  <body>
+    <h4 class="subtitle">Submitted by: <%=@user.username%></h4>
+    <h2 class="subtitle">InForm submitted at: <%= @in_form.created_at %></h2>
+
+    <h4 class="subtitle">Submitted by: <span class='output_text'><%= @in_form.num %> <%= @in_form.rank %> <%= @in_form.name %></span></h4>
+
+    <h4 class="subtitle">Sub-Unit: <span class='output_text'><%= @in_form.pl %></span></h4>
+
+    <hr></hr>
+
+    <h4 class="subtitle">InForm Description:</h4><p><%= @in_form.body %></p>
+
+    <hr></hr>
+    <hr></hr>
+  </body>
+</html>
