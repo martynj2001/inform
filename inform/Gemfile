@@ -59,3 +59,5 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'sorcery', '~> 0.9.1'
 #Figaro - for secure Environment variables, in this case email
 gem 'figaro'
+#cnacan - for authorisation of users.
+gem 'cancan', '~> 1.6', '>= 1.6.10'
