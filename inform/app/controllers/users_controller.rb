@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  before_filter :new_user, :only => [:create]
+
+  load_and_authorize_resource
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -24,7 +29,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    #@user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -62,6 +67,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def new_user
+      @user = User.new(user_params)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -69,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      params.require(:user).permit(:num, :rank, :name, :email, :username, :password, :password_confirmation, :role)
     end
 end

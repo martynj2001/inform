@@ -2,6 +2,9 @@ class InFormsController < ApplicationController
 
   include InFormsHelper
 
+  #CanCan Authorization
+  #load_and_authorize_resource
+
   def index
     @in_forms = InForm.all
   end

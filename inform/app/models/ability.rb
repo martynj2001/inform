@@ -18,31 +18,16 @@ class Ability
     # Guest - not signed in, can create and submit in_forms
     user ||= User.new
 
-
-    if admin? #Create and edit users, create, edit and respond to InForms
+    if user.role == 'admin' #Create and edit users, create, edit and respond to InForms
       can :manage, :all
-      can assign_roles, User
-    elsif moderator? #can view and respond to InForms.
+      can :assign_roles, User
+    elsif user.role == 'moderator' #can view and respond to InForms.
       can :manage, [InForm, Comment]
-    elsif author?
+    elsif user.role == 'author'
       can [:create, :read], InForm, :user_id => user.id
     else
-      can submit_only, InForm
+      can :create, [InForm, User]
     end
 
-    # Custom Alias
-    can assign_roles, User if user.admin?
-  end
-
-  def admin?
-    user.role == 'admin' ? true : false
-  end
-
-  def moderator?
-    user.role == 'moderator' ? true : false
-  end
-
-  def author?
-    user.role == 'author' ? true : false
   end
 end

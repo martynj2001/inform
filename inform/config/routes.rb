@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new'
   get 'logout' => 'user_sessions#destroy'
 
-  root to: 'in_forms#index'
+  root to: 'user_sessions#new'
 end
