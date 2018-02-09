@@ -2,31 +2,47 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
+    # Define abilities for the passed in user here.
     #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
+    # :manage - allows access to all RESTful controller actions
     #
-    # The first argument to `can` is the action you are giving the user 
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
+    # :read - allows user access to #create, #show and #index controller actions
     #
-    # The second argument is the resource the user can perform the action on. 
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
+    # :create - allows users access to #new controller actions
     #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
+    # :edit - allows users access to #update
     #
-    #   can :update, Article, :published => true
+    # :destroy - allows the user to access #destroy
     #
-    # See the wiki for details:
-    # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
+    # Guest - not signed in, can create and submit in_forms
+    user ||= User.new
+
+
+    if admin? #Create and edit users, create, edit and respond to InForms
+      can :manage, :all
+      can assign_roles, User
+    elsif moderator? #can view and respond to InForms.
+      can :manage, [InForm, Comment]
+    elsif author?
+      can [:create, :read], InForm, :user_id => user.id
+    else
+      can submit_only, InForm
+    end
+
+    # Custom Alias
+    can assign_roles, User if user.admin?
+  end
+
+  def admin?
+    user.role == 'admin' ? true : false
+  end
+
+  def moderator?
+    user.role == 'moderator' ? true : false
+  end
+
+  def author?
+    user.role == 'author' ? true : false
   end
 end
