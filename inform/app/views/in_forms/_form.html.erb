@@ -10,18 +10,26 @@
       <p class='col-xs-4'>
         <%= f.label :number %>
         <% if logged_in? %>
-            <%= f.text_field :num, class: 'form-control', placeholder: "#{current_user.username}'s number'"%>
+            <%= f.text_field :num, class: 'form-control', value: current_user.num %>
         <% else %>
             <%= f.text_field :num, class: 'form-control', placeholder: 'Regt Number'%>
         <% end %>
       </p>
       <p class='col-xs-4'>
         <%= f.label :rank %>
-        <%= f.text_field :rank, class: 'form-control'%>
+        <% if logged_in? %>
+          <%= f.text_field :rank, class: 'form-control', value: current_user.rank%>
+        <% else %>
+          <%= f.text_field :rank, class: 'form-control'%>
+        <% end %>
       </p>
       <p class='col-xs-4'>
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control', placeholder: 'First Name & Surname'%>
+        <% if logged_in? %>
+          <%= f.text_field :name, class: 'form-control', value: current_user.name%>
+        <% else %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'First Name & Surname'%>
+        <% end %>
       </p>
     </div>
   </div>

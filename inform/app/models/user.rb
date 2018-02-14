@@ -7,4 +7,18 @@ class User < ApplicationRecord
 
   #CanCan Authority
   ROLES = %w[admin moderator author].freeze
+
+  def role?(role)
+    case role
+      when :admin
+        true
+      when :moderator
+        true
+      when :author
+        true
+      else
+        false
+    end
+  end
+
 end

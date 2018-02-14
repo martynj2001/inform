@@ -1,4 +1,5 @@
 class Ability
+
   include CanCan::Ability
 
   def initialize(user)
@@ -13,21 +14,27 @@ class Ability
     # :edit - allows users access to #update
     #
     # :destroy - allows the user to access #destroy
-    #
 
     # Guest - not signed in, can create and submit in_forms
-    user ||= User.new
 
-    if user.role == 'admin' #Create and edit users, create, edit and respond to InForms
-      can :manage, :all
-      can :assign_roles, User
-    elsif user.role == 'moderator' #can view and respond to InForms.
-      can :manage, [InForm, Comment]
-    elsif user.role == 'author'
-      can [:create, :read], InForm, :user_id => user.id
-    else
-      can :create, [InForm, User]
+    can :create, InForm
+
+    if user.present?
+
+      if user.role == "author"
+        can :read, [InForm]
+        cannot :destroy, InForm
+      end
+
+      if user.role == 'moderator'
+        can :manage, [InForm, Comment]
+        cannot :destroy, InForm
+      end
+
+      if user.role == 'admin'
+        can :manage, :all
+      end
+
     end
-
   end
 end

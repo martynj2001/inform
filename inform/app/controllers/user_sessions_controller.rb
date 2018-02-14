@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(in_forms_path, notice: 'Logged out!')
+    redirect_to(new_user_session_path, notice: 'Logged out!')
   end
 
 end

@@ -3,7 +3,7 @@ class InFormsController < ApplicationController
   include InFormsHelper
 
   #CanCan Authorization
-  #load_and_authorize_resource
+  load_and_authorize_resource
 
   def index
     @in_forms = InForm.all
@@ -21,8 +21,9 @@ class InFormsController < ApplicationController
 
   def create
     @in_forms = InForm.new(in_form_params)
+    @in_forms.user_id = current_user.id if logged_in?
     if @in_forms.save
-      SendInformMailer.send_inform(@user, @in_forms).deliver
+      #SendInformMailer.send_inform(@user, @in_forms).deliver
       #flash.notice = "#{@in_forms.rank} #{@in_forms.name} your InForm has been emailed to the Wksp FSO"
       flash.notice = "#{@in_forms.rank} #{@in_forms.name} your InForm has been submited to the Wksp FSO"
     end
