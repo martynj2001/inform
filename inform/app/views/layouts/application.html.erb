@@ -9,14 +9,13 @@
 
   <body>
     <%= render 'in_forms/navbar'%>
+    <%= render 'in_forms/header'%>
     <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
+      <div class="<%= flash_class(key) %>" id='msg'>
             <%= value %>
       </div>
     <% end %>
-    <%= render 'in_forms/header'%>
     <div class = container>
-
       <%= yield %>
     </div>
   </body>

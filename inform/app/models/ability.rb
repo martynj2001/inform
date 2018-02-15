@@ -22,13 +22,14 @@ class Ability
     if user.present?
 
       if user.role == "author"
-        can :read, [InForm]
+        can :read, InForm
         cannot :destroy, InForm
       end
 
       if user.role == 'moderator'
-        can :manage, [InForm, Comment]
+        can :manage, :all
         cannot :destroy, InForm
+        cannot :manage, User
       end
 
       if user.role == 'admin'

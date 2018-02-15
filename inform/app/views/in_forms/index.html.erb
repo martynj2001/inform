@@ -20,7 +20,7 @@
           <tr>
             <td><%= link_to in_form.created_at, in_form_path(in_form)%></td>
             <td><%= in_form.rank%> <%= in_form.name%></td>
-            <%if can? :manage, @in_forms %>
+            <%if current_user.role == 'admin' %>
               <td><%= link_to 'Destroy', in_form, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %></td>
             <% end %>
           </tr>

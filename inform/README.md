@@ -24,3 +24,4 @@ Rails App - Change log/ToDo.
     * List of InForms displays those that require responses
 
     ** Email informs from Inform_Submited@gmail.com to InForm_sent.com (which auto fwds to 3AAC Wksp Group mail box)
+14 Feb 18: Authorisation with CanCanCan completed. author, moderator and admin roles created and authorised correctly. Need to test and fix email sending.
