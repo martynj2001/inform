@@ -4,6 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" >
   </head>
   <body>
+    <p class = 'subtitle'> Your inform has recieved a response from <%=@comment.author_name%></p>
     <h4 class="subtitle">Submitted by: <%=@in_form.email%></h4>
     <h2 class="subtitle">InForm submitted at: <%= @in_form.created_at %></h2>
 
@@ -17,10 +18,12 @@
 
     <hr></hr>
 
-    <% if @in_form.comments.last != nil%>
-      <h4 class='subtitle'>Response/Update (<%=@in_form.comments.size%>):</h4>
-      <%= render partial: 'in_forms/comment', collection: @in_form.comments %>
-    <% end %>
+    <h4 class='subtitle'>Response/Update (<%=@in_forms.comments.size%>):</h4>
+    <%= render partial: 'in_forms/comment', collection: @in_forms.comments %>
+
+    <hr></hr>
+
+    <p class='subtitle'>Click on the following link to view/edit your inform:</p>
 
   </body>
 </html>
