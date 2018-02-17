@@ -30,14 +30,15 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     #@user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    if can? :create, User
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to new_user_session_path, notice: 'User was successfully created. Please Login to create, edit and view Informs' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -70,6 +71,7 @@ class UsersController < ApplicationController
 
     def new_user
       @user = User.new(user_params)
+      @user.role = 'author' if @user.role == nil
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_user

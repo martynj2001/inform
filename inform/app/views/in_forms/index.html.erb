@@ -3,7 +3,12 @@
 <% if can? :manage, @in_forms %>
   <h2 class='subtitle'> All Current In-Forms (by date)</h1>
 <% else can? :read, @in_forms %>
-  <h2 class='subtitle'> Current In_Forms for <span><%= current_user.username %></span></h1>
+  <% if current_user.in_forms.last != nil %>
+    <h2 class='subtitle'> Current In_Forms for <span><%= current_user.username %></span></h1>
+  <% else %>
+    <h2 class='subtitle'> You have not yet submitted any InForms </h2>
+    <p class='subtitle'> Select the 'Submit InForm' button to submit a new inform </p>
+  <% end %>
 <% end %>
   <table class='table'>
     <thead>

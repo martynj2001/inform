@@ -4,6 +4,10 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" >
   </head>
   <body>
+    <%= render partial: 'in_forms/header' %>
+
+    <p class='subtitle'>A new InForm has been submitted.</p>
+
     <h4 class="subtitle">Submitted by: <%=@in_form.email%></h4>
     <h2 class="subtitle">InForm submitted at: <%= @in_form.created_at %></h2>
 

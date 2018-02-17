@@ -17,7 +17,7 @@ class Ability
 
     # Guest - not signed in, can create and submit in_forms
 
-    can :create, InForm
+    can :create, [InForm, User]
 
     if user.present?
 

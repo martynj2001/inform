@@ -43,6 +43,9 @@ class InFormsController < ApplicationController
   def update
     @in_forms = InForm.find(params[:id])
     @in_forms.update(in_form_params)
+    SendInformMailer.send_inform(@user, @in_forms).deliver
+    #flash.notice = "#{@in_forms.rank} #{@in_forms.name} your InForm has been emailed to the Wksp FSO"
+    flash.notice = "#{@in_forms.rank} #{@in_forms.name} your updated InForm has been submited to the Wksp FSO"
     redirect_to in_forms_path
   end
 
