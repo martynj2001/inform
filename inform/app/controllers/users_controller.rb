@@ -72,6 +72,7 @@ class UsersController < ApplicationController
     def new_user
       @user = User.new(user_params)
       @user.role = 'author' if @user.role == nil
+      @user.email.downcase!
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_user

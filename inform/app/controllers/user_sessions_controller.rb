@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    if @user_login = login(params[:email], params[:password])
+    if @user_login = login(params[:email].downcase, params[:password])
       redirect_back_or_to(in_forms_path, notice: 'Logged in successfully.')
     else
       @user_login = User.new
